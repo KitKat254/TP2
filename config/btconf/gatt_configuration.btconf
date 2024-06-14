@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--Custom BLE GATT-->
-<gatt gatt_caching="true" generic_attribute_service="true" header="gatt_db.h" name="Custom BLE GATT" out="gatt_db.c" prefix="gattdb_">
+<!--Automation IO-->
+<gatt gatt_caching="true" generic_attribute_service="true" header="gatt_db.h" name="Automation IO" out="gatt_db.c" prefix="gattdb_">
 
   <!--Generic Access-->
   <service advertise="false" name="Generic Access" requirement="mandatory" sourceId="org.bluetooth.service.generic_access" type="primary" uuid="1800">
@@ -83,6 +83,20 @@
       <value length="2" type="user" variable_length="false"/>
       <properties>
         <read authenticated="false" bonded="false" encrypted="false"/>
+        <notify authenticated="false" bonded="false" encrypted="false"/>
+      </properties>
+    </characteristic>
+  </service>
+
+  <!--Automation IO-->
+  <service advertise="false" id="automation_io" name="Automation IO" requirement="mandatory" sourceId="" type="primary" uuid="1815">
+
+    <!--Digital-->
+    <characteristic const="false" name="Digital" sourceId="" uuid="884c5811-7cb6-4a2d-a78c-e0689c0a840c">
+      <value length="0" type="user" variable_length="false">00</value>
+      <properties>
+        <write authenticated="false" bonded="false" encrypted="false"/>
+        <write_no_response authenticated="false" bonded="false" encrypted="false"/>
       </properties>
     </characteristic>
   </service>

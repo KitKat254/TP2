@@ -38,6 +38,8 @@
 #else // SL_CATALOG_KERNEL_PRESENT
 #include "sl_system_process_action.h"
 #endif // SL_CATALOG_KERNEL_PRESENT
+#include <stdio.h>
+#include "temperature.h"
 
 int main(void)
 {
